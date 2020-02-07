@@ -1,0 +1,149 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!-- saved from url=(0132)http://scp-wiki.wdfiles.com/local-%2Dhtml/scp-cn-994/aaef1de6c7f52f538a8360d67fbbf8ba22179d59-21183548641331449807/www.scp-wiki.net/ -->
+<html id="html-block-html" xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><link rel="stylesheet" href="./html-block.css"></head><body>
+
+
+<style type="text/css">
+    /* CSS duplicated from Wikidot proper -_- */
+    body {
+        font-family: verdana, arial, helvetica, sans-serif;
+        font-size: 12.8px; /* 16px * 0.8 */
+        color: #333;
+        line-height: 141%;
+
+        max-width: 700px;
+        margin-left: auto !important;
+        margin-right: auto !important;
+    }
+
+    .classified-info {
+        display: none;
+    }
+
+    blockquote {
+        border: 1px dashed #999;
+        padding: 0 12.8px;
+        background-color: #f4f4f4;
+    }
+
+    a {
+        color: #b01;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    a:hover {
+        text-decoration: underline;
+    }
+
+    .collapsed {
+        display: none;
+    }
+
+    h4 {
+        font-size: 130%;
+        font-weight: bold;
+        margin-bottom: 0;
+    }
+</style>
+
+  
+    <div id="div1">
+
+    <blockquote>
+    <p>SCP基金会信息查询终端v1.6.1 请登陆</p>
+    </blockquote>
+    <p>login usn=ucnsld122 pwd=***************</p>
+    <blockquote>
+    <p>欢迎 3级研究员</p>
+    </blockquote>
+    <p>阅读SCP-CN-994</p>
+    <blockquote>
+    <p>已查询到 1 篇名为 SCP-CN-994 的 文档 0 篇相关的 报告</p>
+    </blockquote>
+    <button type="button" onclick="go()"> 打开SCP-CN-994 </button>
+
+    <div id="innerdiv" style="display: none;">
+      <strong>项目编号：</strong> SCP-CN-994<br><br>
+
+      <strong>项目等级：</strong> Euclid<br><br>
+
+      <strong>特殊收容措施：</strong> 由于当前尚不确定SCP-CN-994发生的规律，尚无有效办法预防SCP-CN-994事件。当前对其主要的收容措施是缓和其造成的后果。新的受影响个体应每周进行心理状况诊断并确保其无自杀倾向。必要时应使用记忆删除以减弱其效应。机动特遣队MTF-庚午-23（“目不可及”）应随时待命以救援受项目影响的人员。有关SCP-CN-994的源头、发生频率等更多信息正在研究中。Site-CN-34的成员应尽量减少于密闭空间内独处的情况。<br><br>
+
+      <strong>Description:</strong>SCP-CN-994是一种发生在Site-CN-34内部的异常现象。当一次SCP-CN-994事件发生时，受影响的个体所处的密闭空间（如关上门的办公室、厕所等）与外部联通的门窗均无法从内部打开。同时其所处的密闭空间的墙面、地板或是其他隔断物上将会逐渐出现大量的眼球（编号为SCP-CN-994-1）。目前尚没有对SCP-CN-994-1成功取样的报告。在极少数的事件中，受影响者报告称其正在使用的电子设备显示屏上还会出现大量无意义字符，且受影响空间的四周均出现低沉的撞击声。当受影响空间被从外部强行打开后，SCP-CN-994事件将结束，SCP-CN-994-1与该空间的异常效应均消失。<br><br>
+
+      目前，受影响个体均于四小时至两周内以各种方式自杀。记忆删除可以减轻这种效应，但在其再次独处于密闭空间将会重新获得被删除的相关记忆，这往往导致其出现更加强烈的自杀冲动。</div>
+     </div>
+
+    <script type="text/javascript">
+      var time =10000
+      var ICU = ["我","看","见","你","了"]//Annotation: You may edit the number of characters here, but make sure each "" contains one of the characters, including space
+      var as ="div1"
+      var counter=0;
+      var flag=0;
+      // var content1=document.getElementById("div1").innerHTML
+      var content1
+      var s
+
+      document.getElementById("innerdiv").style.display="none"
+
+      function Random(n)
+      {
+        return Math.floor(Math.random()*n)
+      }
+
+      function sleep(numberMillis) 
+      { 
+        var now = new Date(); 
+        var exitTime = now.getTime() + numberMillis; 
+        while (true) { 
+          now = new Date(); 
+          if (now.getTime() > exitTime) 
+            return; 
+        } 
+      }
+
+      function Change(str)
+      {
+        try
+        {
+          var content=str.split("")
+          var cache = Random(content.length)
+
+          for(i=0;i<5;i++){content[cache+i]=ICU[i]}//Annotation: If you edited the variable ICU, please remember to replace the "9" here by the number of characters in ICU.
+          if(time>=100) time=time-1000
+          else counter++
+          // 原代码是 50000
+          if (counter>5000) {throw new Error("stop here");}
+          document.getElementById(as).innerHTML = content.join("")
+          clearInterval(s)
+          s=setInterval("content1=Change(content1)",time)
+          return content.join("")
+        }
+
+        catch(err)
+        {
+          if(flag==0)
+          {
+            setTimeout("var a=1",10000)
+            document.write("<div>  Site-CN-34监控系统发现你可能已受SCP-CN-994影响。请在原地保持不动并保持镇静，机动特遣队MTF-庚午-24“目不可及” <strong>已经看见你了</strong> </div>") //Annotation: This is the notice that will be displayed to the readers. Please make sure there is no " in the sentence!
+            flag=flag+1
+            sleep(5000)
+            document.write("<div style='text-align: center;'><img src='./iseeyou.png' max-width='75%' style='margin: 0 auto;' /></div>")//Annotation: If a scroll bar appears near the image, you may change "75%" to a slightly smaller number.
+            clearInterval(s)
+            return
+          }
+        }
+      }
+
+      function go()
+      {
+          document.getElementById("innerdiv").style.display="block"
+          content1=document.getElementById("div1").innerHTML
+          var s=setInterval("content1=Change(content1)",time)
+      }
+
+    </script>
+  <!-- <script type="text/javascript" src="./html-block-iframe.js"></script> -->
+
+<!-- <script type="text/javascript" src="./html-block-iframe.js"></script><div id="div_aaef1de6c7f52f538a8360d67fbbf8ba22179d59-211835486413314498070.2700201426348219" style="display: none"><iframe id="iframe_aaef1de6c7f52f538a8360d67fbbf8ba22179d59-211835486413314498070.2700201426348219" src="./resize-iframe.html"></iframe></div><div id="div_aaef1de6c7f52f538a8360d67fbbf8ba22179d59-211835486413314498070.33035567973534263" style="display: none"><iframe id="iframe_aaef1de6c7f52f538a8360d67fbbf8ba22179d59-211835486413314498070.33035567973534263" src="./resize-iframe(1).html"></iframe></div></body></html> -->
